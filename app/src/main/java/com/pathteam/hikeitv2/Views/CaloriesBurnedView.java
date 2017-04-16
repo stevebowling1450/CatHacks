@@ -2,6 +2,7 @@ package com.pathteam.hikeitv2.Views;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.AttributeSet;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -66,7 +67,8 @@ public class CaloriesBurnedView extends LinearLayout {
     @Bind(R.id.selectedHours)
     TextView selectedHours;
 
-     Bitmap pic;
+
+
 
 
 
@@ -126,14 +128,21 @@ public class CaloriesBurnedView extends LinearLayout {
     }
     @OnClick(R.id.calculateButton)
     public void Calculate(){
+
+        try {
             calculateCaloriesBurned();
-            String caloriesBurned = totalCaloriesBurned.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            totalCaloriesBurned = 0.0;
+        }
+        String caloriesBurned = totalCaloriesBurned.toString();
             displayCaloriesBurned.setText(caloriesBurned);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.camera);
 
         try {
             ((MainActivity) getContext()).hikelist.add(new HikeList(Constants.title + "\n" + "Distance: " + Constants.distance + "\n" + Constants.hikeTime, Constants.markersArray, Constants.note, Utils.encodeTobase64(Constants.me),totalCaloriesBurned.toString()));
         } catch (Exception e) {
-            ((MainActivity) getContext()).hikelist.add(new HikeList(Constants.title + "\n" + "Distance: " + Constants.distance + "\n" + Constants.hikeTime, Constants.markersArray, Constants.note, Utils.encodeTobase64(pic),totalCaloriesBurned.toString()));
+            ((MainActivity) getContext()).hikelist.add(new HikeList(Constants.title + "\n" + "Distance: " + Constants.distance + "\n" + Constants.hikeTime, Constants.markersArray, Constants.note, Utils.encodeTobase64(bitmap),totalCaloriesBurned.toString()));
             Toast.makeText(context, "You Did Not Choose an Image!", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }

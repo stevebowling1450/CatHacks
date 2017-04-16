@@ -15,7 +15,7 @@ public class Utils {
 
 
     public static Bitmap resize(Bitmap image) {
-            image = Bitmap.createScaledBitmap(image, 200, 150, false);
+            image = Bitmap.createScaledBitmap(image, 200, 150, true );
         return image;
     }
 

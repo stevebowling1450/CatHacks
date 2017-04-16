@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.pathteam.hikeitv2.Components.Constants;
 import com.pathteam.hikeitv2.HikeApplication;
@@ -92,8 +93,7 @@ public class SaveHikeView extends RelativeLayout {
     public void save() {
         EditText title = (EditText) findViewById(R.id.hike_title);
         EditText note = (EditText) findViewById(R.id.hike_notes);
-        if (!title.getText().toString().equals("") || !note.getText().toString().equals("")) {
-
+        if (!title.getText().toString().equals("") && !note.getText().toString().equals("")) {
             Date startDate = Constants.markersArray.get(0).getDate();
             int i = Constants.markersArray.size() - 1;
             Date endDate = Constants.markersArray.get(i).getDate();
@@ -143,6 +143,8 @@ public class SaveHikeView extends RelativeLayout {
             flow.setHistory(History.single(new CaloriesBurnedStage()),
                     Flow.Direction.BACKWARD);
 
+        }else {
+            Toast.makeText(context, "Please Complete All Fields", Toast.LENGTH_SHORT).show();
         }
     }
 
