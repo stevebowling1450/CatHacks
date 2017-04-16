@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pathteam.hikeitv2.Views.SaveHikeView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Location"
+        android:textAlignment="center"
+        android:ems="10"
+        android:id="@+id/hike_title"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        android:id="@+id/galleryPicture"
+        android:layout_below="@+id/hike_title"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_below="@+id/galleryPicture"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:inputType="textPersonName"
+        android:hint="Notes"
+        android:gravity="top"
+        android:ems="10"
+        android:id="@+id/hike_notes"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/galleryPicture"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="28dp"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:text="Next" />
+
+    <Button
+        android:id="@+id/pick_photo_button"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="18dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/saveButton"
+        android:text="Choose Your Photo" />
+
+</com.pathteam.hikeitv2.Views.SaveHikeView>

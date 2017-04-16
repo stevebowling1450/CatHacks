@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pathteam.hikeitv2.Views.MainMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#afddd5">
+
+    <ImageView
+        android:id="@+id/background_one"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/mountains"/>
+    <ImageView
+        android:id="@+id/background_two"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/mountains"/>
+    <ImageView
+        android:id="@+id/cloud_one"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/clouds1"/>
+
+    <ImageView
+        android:id="@+id/cloud_two"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/clouds1"
+        android:layout_alignParentTop="true"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_mainbig"
+        android:id="@+id/imageView" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView"
+        android:paddingTop="10dp">
+
+    <com.pathteam.hikeitv2.CustomFonts.MyCustomTextViewRubiksBlack
+        android:text="TAKE A HIKE"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textSize="30dp"
+        android:id="@+id/take_a_hike"
+        android:textAlignment="center"
+        android:textColor="#365464"
+        android:clickable="true"
+        android:fontFamily="sans-serif" />
+
+    <com.pathteam.hikeitv2.CustomFonts.MyCustomTextViewRubiksBlack
+        android:text="HIKE LIST"
+        android:layout_width="match_parent"
+        android:textSize="30dp"
+        android:layout_height="70dp"
+        android:textColor="#365464"
+        android:id="@+id/hike_list"
+        android:textAlignment="center"
+        android:clickable="true"/>
+    <com.pathteam.hikeitv2.CustomFonts.MyCustomTextViewRubiksBlack
+        android:text="MY STATISTICS"
+        android:textSize="30dp"
+        android:textColor="#365464"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/my_stats"
+        android:textAlignment="center"
+        android:visibility="gone"/>
+    </LinearLayout>
+
+
+</com.pathteam.hikeitv2.Views.MainMenuView>

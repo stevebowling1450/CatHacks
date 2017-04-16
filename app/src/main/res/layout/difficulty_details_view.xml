@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/colorAccentGray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+            android:lineSpacingExtra="4dp"
+        android:textSize="18sp"
+            android:layout_marginBottom="30dp"
+        android:text="Hiking is not the same on every trail. Different trails have different difficulties and thus require different levels of effort from the body to navigate them. Roughly knowing this difficulty will allow the app to more accurately calculate how many calories you burned on your hike."/>
+
+    <TextView
+        android:text="Easy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/lightTitle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:text="The hike was mostly easily accessible with a smooth and wide trail. There was only occasional unevenness and a very slight grade."
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:id="@+id/lightDescription"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:text="Moderate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/moderateTitle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:text="The trail was mostly smooth with varying widths at certain points. The terrain was a noticeably uneven with rocks, ruts, and other loose material.The trail had a noticeable consistent grade. "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:id="@+id/moderateDescription"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficult"
+        android:id="@+id/intenseTitle"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="The trail had long rocky segments with possible drops. The terrain was continually rocky, loose, and uneven with a grade that reached more than 20% at times. "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/intenseDescription"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="15sp"/>
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <Button
+        android:text="Got it!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/confirm_button"
+                android:visibility="invisible"
+        />
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pathteam.hikeitv2.Views.HikeDetailView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+    <com.pathteam.hikeitv2.CustomFonts.MyCustomTextViewRubiksBlack
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="Blank Title"
+        android:textColor="#FCFFF5"
+        android:textSize="30dp"
+        android:layout_alignParentStart="true"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/location"
+            android:layout_below="@+id/title"
+            android:text="Paintsville, KY"
+            android:textColor="#FCFFF5"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            android:layout_below="@+id/title"
+            android:layout_toRightOf="@+id/location"
+            android:layout_alignParentRight="true"
+            android:text="66/66/66"
+            android:textColor="#FCFFF5"
+            android:textAlignment="viewEnd" />
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_below="@id/location"
+        android:id="@+id/mapview">
+    </com.google.android.gms.maps.MapView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FCFFF5"
+            android:layout_below="@id/mapview"
+            android:id="@+id/hike_notes"
+            android:text="A trail surrounding the lake. Easy to Medium Difficulty level. Some more text to fill space Lorem ipsumtation verear hendrerit. Legendos volutpat qui te, liber tibique te per, summo ocurreret reprehendunt no per.tt"/>
+
+        <ImageView
+            android:id="@+id/saved_image_view"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/hike_notes"
+            app:srcCompat="@android:drawable/ic_menu_gallery"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:text="back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:id="@+id/back"
+                android:visibility="invisible"/>
+
+            <Button
+                android:text="take hike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:id="@+id/take_a_hike"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</com.pathteam.hikeitv2.Views.HikeDetailView>

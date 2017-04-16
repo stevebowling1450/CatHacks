@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pathteam.hikeitv2.Views.MapsView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:apiKey="@string/google_maps_key">
+
+    </com.google.android.gms.maps.MapView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_alignParentBottom="true">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/camera_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camera_resized"
+        android:clickable="true"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:layout_centerHorizontal="true"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/stop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/stop_hike"
+        android:clickable="true"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:layout_alignParentRight="true"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_marker"
+        android:scaleType="center"
+        android:clickable="true"
+        android:visibility="visible" />
+    </RelativeLayout>
+
+</com.pathteam.hikeitv2.Views.MapsView>

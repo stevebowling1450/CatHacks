@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout" android:background="#365464">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+    <com.pathteam.hikeitv2.CustomFonts.MyCustomTextViewRubiksBlack
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FCFFF5"
+        android:textSize="30dp"
+        android:layout_alignParentStart="true"
+        android:text="Paintsville Lake Trail"
+        android:id="@+id/title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/location"
+        android:layout_below="@+id/title"
+        android:text="Paintsville, KY"
+        android:textColor="#FCFFF5"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/location"
+        android:layout_alignParentRight="true"
+        android:text="66/66/66"
+        android:textColor="#FCFFF5"
+        android:textAlignment="viewEnd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FCFFF5"
+        android:layout_below="@id/location"
+        android:id="@+id/hike_notes"
+        android:text="A trail surrounding the lake. Easy to Medium Difficulty level. Some more text to fill space...."/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
