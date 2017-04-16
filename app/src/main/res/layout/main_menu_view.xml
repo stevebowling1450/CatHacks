@@ -43,6 +43,7 @@
 
     <com.pathteam.hikeitv2.CustomFonts.MyCustomTextViewRubiksBlack
         android:text="TAKE A HIKE"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textSize="30dp"
@@ -54,6 +55,7 @@
 
     <com.pathteam.hikeitv2.CustomFonts.MyCustomTextViewRubiksBlack
         android:text="HIKE LIST"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:textSize="30dp"
         android:layout_height="70dp"

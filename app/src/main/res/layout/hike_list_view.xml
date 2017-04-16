@@ -2,7 +2,19 @@
 <com.pathteam.hikeitv2.Views.HikeListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="#afddd5">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:background="@color/colorPrimary">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/list_of_previous_hikes"/>
+</RelativeLayout>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,8 +1,6 @@
 package com.pathteam.hikeitv2.Views;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.EditText;
@@ -92,60 +90,61 @@ public class SaveHikeView extends RelativeLayout {
     }
     @OnClick(R.id.saveButton)
     public void save() {
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.camera);
-        Date startDate = Constants.markersArray.get(0).getDate();
-        int i = Constants.markersArray.size()-1;
-        Date endDate = Constants.markersArray.get(i).getDate();
-        String time = "";
-        try {
-          Date  d1 = startDate;
-            Date d2 = endDate;
+        EditText title = (EditText) findViewById(R.id.hike_title);
+        EditText note = (EditText) findViewById(R.id.hike_notes);
+        if (!title.getText().toString().equals("") || !note.getText().toString().equals("")) {
 
-            //in milliseconds
-            long diff = d2.getTime() - d1.getTime();
+            Date startDate = Constants.markersArray.get(0).getDate();
+            int i = Constants.markersArray.size() - 1;
+            Date endDate = Constants.markersArray.get(i).getDate();
+            String time = "";
+            try {
+                Date d1 = startDate;
+                Date d2 = endDate;
 
-            long diffSeconds = diff / 1000 % 60;
-            long diffMinutes = diff / (60 * 1000) % 60;
-            long diffHours = diff / (60 * 60 * 1000) % 24;
-            long diffDays = diff / (24 * 60 * 60 * 1000);
+                //in milliseconds
+                long diff = d2.getTime() - d1.getTime();
 
-            Constants.timeMin = diffMinutes;
-            Constants.timeHour = diffHours;
-            int TimeSec = (int) diffSeconds;
-            int TimeMin = (int) diffMinutes;
+                long diffSeconds = diff / 1000 % 60;
+                long diffMinutes = diff / (60 * 1000) % 60;
+                long diffHours = diff / (60 * 60 * 1000) % 24;
+                long diffDays = diff / (24 * 60 * 60 * 1000);
 
-            if (TimeSec < 10){
-                timeInSec = "0"+ String.valueOf(TimeSec);
-            }else {
-                timeInSec = String.valueOf(TimeSec);
+                Constants.timeMin = diffMinutes;
+                Constants.timeHour = diffHours;
+                int TimeSec = (int) diffSeconds;
+                int TimeMin = (int) diffMinutes;
+
+                if (TimeSec < 10) {
+                    timeInSec = "0" + String.valueOf(TimeSec);
+                } else {
+                    timeInSec = String.valueOf(TimeSec);
+                }
+
+                if (TimeMin < 10) {
+                    timeInMin = "0" + String.valueOf(TimeMin);
+                } else {
+                    timeInMin = String.valueOf(TimeMin);
+                }
+
+
+                time = "Duration: " + String.valueOf(diffHours) + ":" + timeInMin + ":" + timeInSec;
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
-            if (TimeMin < 10){
-                timeInMin = "0"+ String.valueOf(TimeMin);
-            }else {
-                timeInMin = String.valueOf(TimeMin);
-            }
 
-
-
-
-            time = "Duration: "+ String.valueOf(diffHours)+":"+timeInMin+":"+timeInSec;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        EditText title   = (EditText)findViewById(R.id.hike_title);
-        EditText note   = (EditText)findViewById(R.id.hike_notes);
-        Constants.title = title.getText().toString();
-        Constants.hikeTime = time;
-        Constants.note = note.getText().toString();
-        ((MainActivity) getContext()).writeHikes();
+            Constants.title = title.getText().toString();
+            Constants.hikeTime = time;
+            Constants.note = note.getText().toString();
+            ((MainActivity) getContext()).writeHikes();
             Flow flow = HikeApplication.getMainFlow();
-        flow.setHistory(History.single(new CaloriesBurnedStage()),
-                Flow.Direction.BACKWARD);
+            flow.setHistory(History.single(new CaloriesBurnedStage()),
+                    Flow.Direction.BACKWARD);
 
         }
+    }
 
     }
 

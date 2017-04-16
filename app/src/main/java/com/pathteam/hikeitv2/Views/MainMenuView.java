@@ -31,6 +31,8 @@ public class MainMenuView extends RelativeLayout{
     @Bind(R.id.my_stats)
     TextView myStats;
 
+
+
     public MainMenuView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;

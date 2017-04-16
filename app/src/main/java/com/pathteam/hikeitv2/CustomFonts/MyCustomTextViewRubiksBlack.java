@@ -9,7 +9,7 @@ import android.widget.TextView;
  * Created by JoshuaMabry on 11/17/16.
  */
 
-public class MyCustomTextViewRubiksBlack extends TextView {
+public class MyCustomTextViewRubiksBlack extends android.support.v7.widget.AppCompatTextView {
     public MyCustomTextViewRubiksBlack(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setTypeface(Typeface.createFromAsset(context.getAssets(),

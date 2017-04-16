@@ -63,6 +63,8 @@ public class MapsView extends RelativeLayout implements OnMapReadyCallback,
     double value;
     Handler handler = new Handler();
 
+    int go=0;
+
     @Bind(map)
     MapView mapView;
 
@@ -80,6 +82,7 @@ public class MapsView extends RelativeLayout implements OnMapReadyCallback,
 
     @Override
     protected void onFinishInflate() {
+        go = 0;
         ButterKnife.bind(this);
         super.onFinishInflate();
         mapView.getMapAsync(this);
@@ -100,7 +103,7 @@ public class MapsView extends RelativeLayout implements OnMapReadyCallback,
 
                         .zIndex(i)
                         .draggable(true)
-                        .title("TIME: "+sdf.format(date).toString())
+                        .title("TIME: "+ sdf.format(date))
                         .position(Home));
                 Log.d("@@@@@@@", "Hello");
 
@@ -219,6 +222,7 @@ public class MapsView extends RelativeLayout implements OnMapReadyCallback,
     //StartButton
     @OnClick(R.id.start_button)
     public void startHike() {
+        go = go +1;
         if (i < 1) {
             // this is where the Start button call the timer to start
             handler.postDelayed(r, 100);
@@ -230,16 +234,17 @@ public class MapsView extends RelativeLayout implements OnMapReadyCallback,
     //StopButton
     @OnClick(R.id.stop_button)
     public void saveHike() {
-        z=z + 1;
+        if (go > 0) {
+            z = z + 1;
+            handler.removeCallbacks(r);
+            Constants.markersArray = markers;
 
-        handler.removeCallbacks(r);
-        Constants.markersArray=markers;
-
-        Flow flow = HikeApplication.getMainFlow();
-        History newHistory = flow.getHistory().buildUpon()
-                .push(new SaveHikeStage())
-                .build();
-        flow.setHistory(newHistory, Flow.Direction.FORWARD);
+            Flow flow = HikeApplication.getMainFlow();
+            History newHistory = flow.getHistory().buildUpon()
+                    .push(new SaveHikeStage())
+                    .build();
+            flow.setHistory(newHistory, Flow.Direction.FORWARD);
+        }
     }
 
     @OnClick(R.id.camera_button)
