@@ -146,6 +146,7 @@ public class CaloriesBurnedView extends LinearLayout {
             Toast.makeText(context, "You Did Not Choose an Image!", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
+        ((MainActivity) getContext()).writeHikes();
         Flow flow = HikeApplication.getMainFlow();
         History newHistory = flow.getHistory().buildUpon()
                 .push(new MainMenuStage())

@@ -138,7 +138,7 @@ public class SaveHikeView extends RelativeLayout {
             Constants.title = title.getText().toString();
             Constants.hikeTime = time;
             Constants.note = note.getText().toString();
-            ((MainActivity) getContext()).writeHikes();
+
             Flow flow = HikeApplication.getMainFlow();
             flow.setHistory(History.single(new CaloriesBurnedStage()),
                     Flow.Direction.BACKWARD);
