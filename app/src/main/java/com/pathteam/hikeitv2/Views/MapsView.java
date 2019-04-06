@@ -90,7 +90,7 @@ public class MapsView extends RelativeLayout implements OnMapReadyCallback,
         mapView.onResume();
     }
 
-    //This is the timer for dropping markers-- Alex edit of marker arrays
+    //This is the timer for dropping markers
     int i = 0;
     final Runnable r = new Runnable() {
         public void run() {
